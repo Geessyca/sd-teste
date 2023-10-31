@@ -232,6 +232,39 @@
 
     </script>
     <script>
+        fetch('http://127.0.0.1:5000/conf?token=123456', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+      'mode':'no-cors'
+    // Se você precisar enviar cabeçalhos personalizados ou tokens de autenticação, adicione aqui.
+  }
+})
+  .then(response => response.json())
+  .then(data => {
+    // Faça algo com os dados recebidos na resposta
+    console.log(data);
+  })
+  .catch(error => {
+    // Trate os erros da solicitação
+    console.error('Erro:', error);
+  });
+        fetch('http://127.0.0.1:5000/conf?token=123456', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json'
+    // Se você precisar enviar cabeçalhos personalizados ou tokens de autenticação, adicione aqui.
+  }
+})
+  .then(response => response.json())
+  .then(data => {
+    // Faça algo com os dados recebidos na resposta
+    console.log(data);
+  })
+  .catch(error => {
+    // Trate os erros da solicitação
+    console.error('Erro:', error);
+  });
         function toggleConfig() {
             const configContent = document.getElementById('config-content');
             if (configContent.style.display === 'none') {
